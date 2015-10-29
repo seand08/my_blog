@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    @blog_post= BlogPost.find(params[:id])
   end
 
   # POST /comments

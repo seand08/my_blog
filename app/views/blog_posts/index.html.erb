@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
+<p><% id="notice" %><%= notice %></p>
 
+<% Time::DATE_FORMATS[:just_date] = "%b %d, %Y" %>
+<% Time::DATE_FORMATS[:just_time] = "%I:%M%p" %>
 <h1>Current Blog Posts</h1>
 
 <div class="row">
@@ -8,6 +10,9 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <%= link_to blog_post.title, blog_post %>
+          <br>
+          <%= blog_post.created_at.to_s(:just_date) %>
+          <%= blog_post.created_at.to_s(:just_time) %>
         </div>
         <div class="panel-body">
      
